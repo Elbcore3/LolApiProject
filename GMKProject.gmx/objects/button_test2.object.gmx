@@ -33,6 +33,7 @@ textoffsetx = 3;
 textoffsety = 3;
 font = font_button;
 requestid = -1;
+instanceid = object_index;
 </string>
           </argument>
         </arguments>
@@ -63,9 +64,7 @@ pressed =1;
 if (mouse_check_button_released(mb_left)) {
 if (pressed ==1) {
 if ((mouse_x&gt;x)&amp;&amp;(mouse_x&lt;x+width)&amp;&amp;(mouse_y&gt;y)&amp;&amp;(mouse_y&lt;y+height)) {
-//FIRE ACTION
-var map = ds_map_create();
-requestid =http_request('https://euw.api.pvp.net/api/lol/euw/v1.4/summoner/by-name/ElbcoreAC?api_key=7404901e-6f1d-419a-b8e0-6726bf400766',"GET",map,"");
+instance_create(x+10,y,instanceid);
 }
 pressed =0;
 }
@@ -94,12 +93,8 @@ pressed =0;
             <kind>1</kind>
             <string>var rid =ds_map_find_value(async_load,"id");
 if (rid == requestid) {
-if (check_statuserrors(ds_map_find_value(async_load,"http_status"))) {
+show_message("Got Sth Back!");
 show_message(ds_map_find_value(async_load,"result"));
-}
-else {
-show_message(get_errordetails(ds_map_find_value(async_load,"http_status")));
-}
 }
 </string>
           </argument>

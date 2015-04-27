@@ -28,7 +28,7 @@
             <string>width = 96
 height = 24
 pressed = 0;
-caption = "Test :B"
+caption = "Test 2"
 textoffsetx = 3;
 textoffsety = 3;
 font = font_button;

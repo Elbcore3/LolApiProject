@@ -14,6 +14,10 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\check_statuserrors.gml</script>
+    <script>scripts\get_errordetails.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_button</font>
   </fonts>
@@ -21,7 +25,10 @@
     <object>objects\button_test</object>
     <objects name="Prefabs">
       <object>objects\pre_Button</object>
+      <object>objects\button_test2</object>
     </objects>
+    <object>objects\socket</object>
+    <object>objects\null</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
