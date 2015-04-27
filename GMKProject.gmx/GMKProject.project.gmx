@@ -18,6 +18,7 @@
     <font>fonts\font_button</font>
   </fonts>
   <objects name="objects">
+    <object>objects\button_test</object>
     <objects name="Prefabs">
       <object>objects\pre_Button</object>
     </objects>
