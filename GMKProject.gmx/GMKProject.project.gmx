@@ -19,6 +19,7 @@
     <script>scripts\get_errordetails.gml</script>
     <script>scripts\write_results.gml</script>
     <script>scripts\api_getTest.gml</script>
+    <script>scripts\keyobjects.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_button</font>
