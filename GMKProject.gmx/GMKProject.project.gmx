@@ -5,9 +5,26 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprites name="Button">
+      <sprite>sprites\button_bg</sprite>
+      <sprite>sprites\button_fg</sprite>
+      <sprite>sprites\button_fgp</sprite>
+    </sprites>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\font_button</font>
+  </fonts>
+  <objects name="objects">
+    <objects name="Prefabs">
+      <object>objects\pre_Button</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\room0</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
