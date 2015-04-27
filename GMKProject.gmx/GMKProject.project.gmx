@@ -32,6 +32,7 @@
     <object>objects\socket</object>
     <objects name="data_struct">
       <object>objects\data_unformatted</object>
+      <object>objects\data_summonerinfo</object>
     </objects>
   </objects>
   <rooms name="rooms">
