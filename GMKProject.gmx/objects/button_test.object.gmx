@@ -95,7 +95,7 @@ pressed =0;
             <string>var rid =ds_map_find_value(async_load,"id");
 if (rid == requestid) {
 show_message("Got Sth Back!");
-show_debug_message(ds_map_find_value(async_load,"result"));
+show_message(ds_map_find_value(async_load,"result"));
 }
 </string>
           </argument>
