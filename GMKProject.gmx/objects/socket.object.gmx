@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>requestid=-1;
 url = "";
-storein = null;
-status = 0; //0 = off 1= active 2=waiting 3=finished
+storein = -1;
+response = "";
+status = 0; //0 = off 1= active 2=waiting 3=writing 4=finished
 </string>
           </argument>
         </arguments>
@@ -56,6 +57,14 @@ var map = ds_map_create();
 requestid =http_request(url,"GET",map,"");
 status=2;
 }
+if (status==3) {
+if (write_results(response,storein)) {
+status = 4;
+}
+}
+if (status==4) {
+instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -80,6 +89,16 @@ status=2;
             <kind>1</kind>
             <string>var rid =ds_map_find_value(async_load,"id");
 if (rid == requestid) {
+if (check_statuserrors(ds_map_find_value(async_load,"http_status"))) {
+if (status == 2) {
+response = ds_map_find_value(async_load,"result");
+status = 3;
+}
+}
+else {
+show_message(get_errordetails(ds_map_find_value(async_load,"http_status")));
+status = 4;
+}
 
 }
 </string>

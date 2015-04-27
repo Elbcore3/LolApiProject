@@ -17,6 +17,8 @@
   <scripts name="scripts">
     <script>scripts\check_statuserrors.gml</script>
     <script>scripts\get_errordetails.gml</script>
+    <script>scripts\write_results.gml</script>
+    <script>scripts\api_getTest.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_button</font>
@@ -28,7 +30,9 @@
       <object>objects\button_test2</object>
     </objects>
     <object>objects\socket</object>
-    <object>objects\null</object>
+    <objects name="data_struct">
+      <object>objects\data_unformatted</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

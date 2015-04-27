@@ -25,13 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>width = 96
-height = 24
-pressed = 0;
-caption = "Test :B"
-textoffsetx = 3;
-textoffsety = 3;
-font = font_button;
+            <string>written = 0;
+text = "";
 </string>
           </argument>
         </arguments>
@@ -54,52 +49,9 @@ font = font_button;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((mouse_check_button_pressed(mb_left))&amp;&amp;(mouse_x&gt;x)&amp;&amp;(mouse_x&lt;x+width)&amp;&amp;(mouse_y&gt;y)&amp;&amp;(mouse_y&lt;y+height)) {
-if (pressed ==0) {
-pressed =1;
-}
-}
-if (mouse_check_button_released(mb_left)) {
-if (pressed ==1) {
-if ((mouse_x&gt;x)&amp;&amp;(mouse_x&lt;x+width)&amp;&amp;(mouse_y&gt;y)&amp;&amp;(mouse_y&lt;y+height)) {
-//FIRE ACTION
-api_getTest();
-}
-pressed =0;
-}
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_sprite_ext(button_bg,0,x,y,width/512,height/512,0,c_white,1);
-draw_set_halign(fa_center);
-draw_set_valign(fa_top);
-draw_set_font(font_button);
-draw_text_ext_transformed(x+(width/2),y+textoffsety,caption,1,width-(textoffsetx*2),1,1,0);
-if (pressed == 0) {
-draw_sprite_ext(button_fg,0,x,y,width/512,height/512,0,c_white,0.5);
-}
-else {
-draw_sprite_ext(button_fgp,0,x,y,width/512,height/512,0,c_white,0.5);
+            <string>if (written=1) {
+show_message(text);
+instance_destroy();
 }
 </string>
           </argument>
