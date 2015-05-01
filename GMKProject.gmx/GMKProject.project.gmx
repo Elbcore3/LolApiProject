@@ -22,6 +22,13 @@
     <script>scripts\keyobjects.gml</script>
     <script>scripts\array_get_max_length_2d.gml</script>
     <script>scripts\new_colorstring.gml</script>
+    <scripts name="write_summoner">
+      <script>scripts\ws_setsummoner.gml</script>
+      <script>scripts\ws_set_id.gml</script>
+      <script>scripts\ws_set_name.gml</script>
+      <script>scripts\ws_set_icon.gml</script>
+      <script>scripts\ws_set_level.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_button</font>
@@ -35,7 +42,10 @@
     <object>objects\socket</object>
     <objects name="data_struct">
       <object>objects\data_unformatted</object>
-      <object>objects\data_summonerinfo</object>
+      <object>objects\data_summoners</object>
+      <objects name="summoners">
+        <object>objects\data_summonerinfo</object>
+      </objects>
     </objects>
     <object>objects\output</object>
     <object>objects\data_colorstring</object>

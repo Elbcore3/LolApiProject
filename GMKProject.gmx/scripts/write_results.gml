@@ -77,19 +77,20 @@ status = 5;
 if (status == 5) {
 
 //Summoner Info
-if (store.object_index == data_summonerinfo) {
+if (store.object_index == data_summoners) {
 if (readvalue == "") {
 show_message('"'+readkey+'"');
+ws_setsummoner(store,readkey);
 readkey = "";
 readvalue = "";
 status = 1;
 }
 else {
-show_message('"'+readkey+'" : "'+readvalue+'"');
-if (readkey=="id") {store.summonerid = real(readvalue);}
-if (readkey=="name") {store.summonername = readvalue;}
-if (readkey=="profileIconId") {store.summonericon = real(readvalue);}
-if (readkey=="summonerLevel") {store.summonerlevel = real(readvalue);}
+//show_message('"'+readkey+'" : "'+readvalue+'"');
+if (readkey=="id") {ws_set_id(store,readvalue);}
+if (readkey=="name") {ws_set_name(store,readvalue);}
+if (readkey=="profileIconId") {ws_set_icon(store,readvalue);}
+if (readkey=="summonerLevel") {ws_set_level(store,readvalue);}
 readkey = "";
 readvalue = "";
 status = 1;
