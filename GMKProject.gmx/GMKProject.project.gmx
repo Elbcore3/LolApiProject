@@ -18,7 +18,7 @@
     <script>scripts\check_statuserrors.gml</script>
     <script>scripts\get_errordetails.gml</script>
     <script>scripts\write_results.gml</script>
-    <script>scripts\api_getTest.gml</script>
+    <script>scripts\api_getSummoners.gml</script>
     <script>scripts\keyobjects.gml</script>
     <script>scripts\array_get_max_length_2d.gml</script>
     <script>scripts\new_colorstring.gml</script>

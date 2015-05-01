@@ -50,16 +50,25 @@ summoners = ds_map_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var si,sn,sl,sic;
+            <string>var si,sn,sl,sic,i;
 if (written==1) {
+i = 1;
 sumind =ds_map_find_first(summoners);
 while (is_undefined(sumind)==false) {
 sn = string(ds_map_find_value(summoners,sumind).summonername);
 si = string(ds_map_find_value(summoners,sumind).summonerid);
 sl = string(ds_map_find_value(summoners,sumind).summonerlevel);
 sic = string(ds_map_find_value(summoners,sumind).summonericon);
-show_message(sn+" ("+si+") - Level: "+sl+" - Icon: "+sic);
+output.r[i,0] = new_colorstring(sn,c_dkgray);
+if (real(sl)&lt;30) {
+output.r[i,1] = new_colorstring(sl,c_orange);
+}
+else {
+output.r[i,1] = new_colorstring(sl,c_lime);
+}
+//show_message(sn+" ("+si+") - Level: "+sl+" - Icon: "+sic);
 sumind = ds_map_find_next(summoners,sumind);
+i+=1;
 }
 written=2;
 }

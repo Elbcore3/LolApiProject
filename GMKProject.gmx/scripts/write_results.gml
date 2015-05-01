@@ -6,7 +6,7 @@ store.text = response;
 store.written=1;
 }
 if (keyobjects(store)) {
-show_message("Mode: KeyRead");
+//show_message("Mode: KeyRead");
 char = "";
 status = 1;
 readkey = "";
@@ -79,7 +79,7 @@ if (status == 5) {
 //Summoner Info
 if (store.object_index == data_summoners) {
 if (readvalue == "") {
-show_message('"'+readkey+'"');
+//show_message('"'+readkey+'"');
 ws_setsummoner(store,readkey);
 readkey = "";
 readvalue = "";
