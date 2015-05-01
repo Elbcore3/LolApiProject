@@ -25,13 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>width = 96
-height = 24
-pressed = 0;
-caption = "Test :B"
-textoffsetx = 3;
-textoffsety = 3;
-font = font_button;
+            <string>written = 0;
+sumind = "";
+write = false;
+summoners = ds_map_create();
 </string>
           </argument>
         </arguments>
@@ -48,58 +45,52 @@ font = font_button;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>data_ranks</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((mouse_check_button_pressed(mb_left))&amp;&amp;(mouse_x&gt;x)&amp;&amp;(mouse_x&lt;x+width)&amp;&amp;(mouse_y&gt;y)&amp;&amp;(mouse_y&lt;y+height)) {
-if (pressed ==0) {
-pressed =1;
+            <string>var sn,sl,sd,sgw,sgl;
+if (written==1) {
+sumind = ds_map_find_first(summoners);
+while (is_undefined(sumind)==false) {
+sn = string(ds_map_find_value(summoners,sumind).summonername);
+sl = string(ds_map_find_value(summoners,sumind).summonerleague);
+sd = string(ds_map_find_value(summoners,sumind).summonerdivision);
+sgw = string(ds_map_find_value(summoners,sumind).summonerwins);
+sgl = string(ds_map_find_value(summoners,sumind).summonerlosses);
+for (i=1;i&lt;array_height_2d(output.r);i++) {
+if (output.r[i,0].object_index==data_colorstring) {
+if (output.r[i,0].text==sn) {
+if (sl == "BRONZE") {
+output.r[i,2] = new_colorstring(sl+" "+sd,16512);
+}
+if (sl == "SILVER") {
+output.r[i,2] = new_colorstring(sl+" "+sd,c_ltgray);
+}
+if (sl == "GOLD") {
+output.r[i,2] = new_colorstring(sl+" "+sd,c_orange);
+}
+if (sl == "PLATINUM") {
+output.r[i,2] = new_colorstring(sl+" "+sd,5671424);
+}
+if (sl == "DIAMOND") {
+output.r[i,2] = new_colorstring(sl+" "+sd,c_aqua);
+}
+if (sl == "MASTER") {
+output.r[i,2] = new_colorstring(sl+" "+sd,c_navy);
+}
+if (sl == "CHALLENGER") {
+output.r[i,2] = new_colorstring(sl+" "+sd,c_fuchsia);
+}
+output.r[i,3] = new_colorstring(string(real(sgw)+real(sgl)),c_blue);
 }
 }
-if (mouse_check_button_released(mb_left)) {
-if (pressed ==1) {
-if ((mouse_x&gt;x)&amp;&amp;(mouse_x&lt;x+width)&amp;&amp;(mouse_y&gt;y)&amp;&amp;(mouse_y&lt;y+height)) {
-//FIRE ACTION
-api_getSummoners(get_string("Summoner Name(s):","GreyAC,Verkacki,Eyktan,ChriSick,ElbcoreAC"));
 }
-pressed =0;
+sumind = ds_map_find_next(summoners,sumind);
 }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_sprite_ext(button_bg,0,x,y,width/512,height/512,0,c_white,1);
-draw_set_halign(fa_center);
-draw_set_valign(fa_top);
-draw_set_font(font_button);
-draw_text_ext_transformed(x+(width/2),y+textoffsety,caption,1,width-(textoffsetx*2),1,1,0);
-if (pressed == 0) {
-draw_sprite_ext(button_fg,0,x,y,width/512,height/512,0,c_white,0.5);
-}
-else {
-draw_sprite_ext(button_fgp,0,x,y,width/512,height/512,0,c_white,0.5);
+written=2;
 }
 </string>
           </argument>

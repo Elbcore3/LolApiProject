@@ -29,6 +29,8 @@
 spacex = 90;
 r[0,0] = new_colorstring("Name", c_black);
 r[0,1] = new_colorstring("Level", c_black);
+r[0,2] = new_colorstring("Rank", c_black);
+r[0,3] = new_colorstring("Games", c_black);
 </string>
           </argument>
         </arguments>

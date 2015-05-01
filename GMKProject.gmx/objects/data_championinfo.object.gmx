@@ -25,57 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>written = 0;
-sumind = "";
-summoners = ds_map_create();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>var si,sn,sl,sic,i,sidl;
-if (written==1) {
-i = 1;
-sidl = "";
-sumind =ds_map_find_first(summoners);
-while (is_undefined(sumind)==false) {
-sn = string(ds_map_find_value(summoners,sumind).summonername);
-si = string(ds_map_find_value(summoners,sumind).summonerid);
-sl = string(ds_map_find_value(summoners,sumind).summonerlevel);
-sic = string(ds_map_find_value(summoners,sumind).summonericon);
-output.r[i,0] = new_colorstring(sn,c_dkgray);
-if (real(sl)&lt;30) {
-output.r[i,1] = new_colorstring(sl,c_orange);
-}
-else {
-output.r[i,1] = new_colorstring(sl,c_lime);
-}
-sidl = sidl + si+ ",";
-//show_message(sn+" ("+si+") - Level: "+sl+" - Icon: "+sic);
-sumind = ds_map_find_next(summoners,sumind);
-i+=1;
-}
-show_message(sidl);
-api_getRanks(sidl);
-written=2;
-}
+            <string>championid=0;
+championname = "";
 </string>
           </argument>
         </arguments>

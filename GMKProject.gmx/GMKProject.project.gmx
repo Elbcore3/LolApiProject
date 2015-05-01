@@ -19,6 +19,8 @@
     <script>scripts\get_errordetails.gml</script>
     <script>scripts\write_results.gml</script>
     <script>scripts\api_getSummoners.gml</script>
+    <script>scripts\api_getChampions.gml</script>
+    <script>scripts\api_getRanks.gml</script>
     <script>scripts\keyobjects.gml</script>
     <script>scripts\array_get_max_length_2d.gml</script>
     <script>scripts\new_colorstring.gml</script>
@@ -28,6 +30,21 @@
       <script>scripts\ws_set_name.gml</script>
       <script>scripts\ws_set_icon.gml</script>
       <script>scripts\ws_set_level.gml</script>
+    </scripts>
+    <scripts name="write_rank">
+      <script>scripts\wr_setsummoner.gml</script>
+      <script>scripts\wr_set_write.gml</script>
+      <script>scripts\wr_set_id.gml</script>
+      <script>scripts\wr_set_name.gml</script>
+      <script>scripts\wr_set_league.gml</script>
+      <script>scripts\wr_set_division.gml</script>
+      <script>scripts\wr_set_summonerwins.gml</script>
+      <script>scripts\wr_set_summonerlosses.gml</script>
+    </scripts>
+    <scripts name="write_champs">
+      <script>scripts\wcl_setchampion.gml</script>
+      <script>scripts\wcl_set_id.gml</script>
+      <script>scripts\wcl_set_name.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -43,8 +60,12 @@
     <objects name="data_struct">
       <object>objects\data_unformatted</object>
       <object>objects\data_summoners</object>
-      <objects name="summoners">
+      <object>objects\data_ranks</object>
+      <object>objects\data_champs</object>
+      <objects name="sub_structs">
         <object>objects\data_summonerinfo</object>
+        <object>objects\data_rankedinfo</object>
+        <object>objects\data_championinfo</object>
       </objects>
     </objects>
     <object>objects\output</object>

@@ -96,6 +96,56 @@ readvalue = "";
 status = 1;
 }
 }
+if (store.object_index == data_champs) {
+if (readvalue == "") {
+//show_message('"'+readkey+'"');
+if ((readkey!="data")&&(readkey!="info")) {
+wcl_setchampion(store,readkey);
+}
+readkey = "";
+readvalue = "";
+status = 1;
+}
+else {
+//show_message('"'+readkey+'" : "'+readvalue+'"');
+if (readkey=="id") {wcl_set_id(store,readvalue);}
+if (readkey=="name") {wcl_set_name(store,readvalue);}
+readkey = "";
+readvalue = "";
+status = 1;
+}
+}
+if (store.object_index == data_ranks) {
+if (readvalue == "") {
+//show_message('"'+readkey+'"');
+if (readkey!="entries") {
+wr_setsummoner(store,readkey);
+}
+readkey = "";
+readvalue = "";
+status = 1;
+}
+else {
+//show_message('"'+readkey+'" : "'+readvalue+'"');
+if (readkey=="queue") {
+if (readvalue=="RANKED_SOLO_5x5") {
+wr_set_write(store,true);
+}
+else {
+wr_set_write(store,false);
+}
+}
+if (readkey=="playerOrTeamId") {wr_set_id(store,readvalue);}
+if (readkey=="playerOrTeamName") {wr_set_name(store,readvalue);}
+if (readkey=="tier") {wr_set_league(store,readvalue);}
+if (readkey=="division") {wr_set_division(store,readvalue);}
+if (readkey=="wins") {wr_set_summonerwins(store,readvalue);}
+if (readkey=="losses") {wr_set_summonerlosses(store,readvalue);}
+readkey = "";
+readvalue = "";
+status = 1;
+}
+}
 //
 
 
