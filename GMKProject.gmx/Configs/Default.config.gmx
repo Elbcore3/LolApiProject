@@ -428,5 +428,10 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
-  <ConfigConstants/>
+  <ConfigConstants>
+    <constants number="2">
+      <constant name="region">'euw'</constant>
+      <constant name="api_key">'7404901e-6f1d-419a-b8e0-6726bf400766'</constant>
+    </constants>
+  </ConfigConstants>
 </Config>

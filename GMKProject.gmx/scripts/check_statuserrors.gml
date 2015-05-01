@@ -1,5 +1,5 @@
-var status, error, int;
-status = argument0; clean = true;
+var httpstat, error, int, clean;
+httpstat = argument0; clean = true;
 int[0] = 400;
 int[1] = 401;
 int[2] = 404;

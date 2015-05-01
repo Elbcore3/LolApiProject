@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>requestid=-1;
-url = "";
-storein = -1;
-response = "";
-status = 0; //0 = off 1= active 2=waiting 3=writing 4=finished
+            <string>spacey = 20;
+spacex = 90;
+r[0,0] = new_colorstring("lel", c_aqua);
+r[1,1] = new_colorstring("ayy", c_fuchsia);
+r[2,2] = new_colorstring("lmao", c_red);
 </string>
           </argument>
         </arguments>
@@ -52,25 +52,12 @@ status = 0; //0 = off 1= active 2=waiting 3=writing 4=finished
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (status ==1) {
-var map = ds_map_create();
-requestid =http_request(url,"GET",map,"");
-status=2;
-}
-if (status==3) {
-if (write_results(response,storein)) {
-status = 4;
-}
-}
-if (status==4) {
-instance_destroy();
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="62">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -87,24 +74,23 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var rid, hst, map;
-map = async_load;
-rid =ds_map_find_value(map,"id");
-if (rid == requestid) {
-if (is_undefined(ds_map_find_value(map,"http_status"))==false) {
-hst = real(ds_map_find_value(map,"http_status"));
-if (check_statuserrors(hst)) {
-if (status == 2) {
-response = ds_map_find_value(map,"result");
-status = 3;
-}
-}
-else {
-show_message(get_errordetails(ds_map_find_value(map,"http_status")));
-status = 4;
-}
-}
-}
+            <string>draw_set_font(font_button);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+draw_set_colour(c_white);
+draw_rectangle(x,y,x+spacex*(array_height_2d(r)+1),y+spacey*(array_get_max_length_2d(r)+2),false);
+draw_set_colour(c_black);
+for (var i = 0; i&lt;array_height_2d(r); i++;)
+   {
+   for (var j = 0; j&lt;array_length_2d(r, i); j++;)
+      {
+      if (r[i,j].object_index==data_colorstring) {
+      draw_set_colour(r[i,j].color);
+      draw_text(x+spacex*(i+1),y+spacey*(j+1),r[i,j].text);
+      draw_set_colour(c_black);
+      }
+      }
+   }
 </string>
           </argument>
         </arguments>

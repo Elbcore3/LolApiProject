@@ -6,6 +6,7 @@ store.text = response;
 store.written=1;
 }
 if (keyobjects(store)) {
+show_message("Mode: KeyRead");
 char = "";
 status = 1;
 readkey = "";
@@ -13,18 +14,9 @@ readvalue = "";
 for (i=1; i<=string_length(response); i+=1)
 {
 char = string_char_at(response,i);
-/*//Check for 2 brackets
-if (status ==0) {
-if (char == '{') {
-brackets+=1;
-}
-if (brackets==2) {
-status=1;
-}
-}
-//*/
 //Wait for Key
 if (status == 1) {
+//show_message('Status: Waiting for Key at Char: "'+char+'"');
 if (char == '"') {
 status = 2;
 i+=1;
@@ -36,6 +28,7 @@ char = string_char_at(response,i);
 //
 //Read Key Name
 if (status == 2) {
+//show_message('Status: Found Key! Reading Char: "'+char+'" Key: "'+readkey+'"');
 if (char!='"') {
 readkey +=char;
 }
@@ -55,6 +48,7 @@ status = 1;
 //
 //Wait for Value
 if (status == 3) {
+//show_message('Status: Waiting for Value at Char: "'+char+'" for Key: "'+readkey+'"');
 if (char == ':') {
 status = 4;
 i+=1;
@@ -66,6 +60,7 @@ char = string_char_at(response,i);
 //
 //Read Value Name
 if (status == 4) {
+//show_message('Status: Found Value! Reading Char: "'+char+'" Value: "'+readvalue+'"');
 if ((char!='"')&&(char!=',')&&(char!='}')) {
 readvalue +=char;
 }
