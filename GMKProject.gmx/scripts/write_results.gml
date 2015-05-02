@@ -115,6 +115,24 @@ readvalue = "";
 status = 1;
 }
 }
+if (store.object_index == data_champstats) {
+if (readvalue == "") {
+//show_message('"'+readkey+'"');
+readkey = "";
+readvalue = "";
+status = 1;
+}
+else {
+//show_message('"'+readkey+'" : "'+readvalue+'"');
+if (readkey=="id") {wc_setchampion(store,readvalue);}
+if (readkey=="totalSessionsPlayed") {wc_set_games(store,readvalue);}
+if (readkey=="totalSessionsWon") {wc_set_wins(store,readvalue);}
+if (readkey=="totalSessionsLost") {wc_set_losses(store,readvalue);}
+readkey = "";
+readvalue = "";
+status = 1;
+}
+}
 if (store.object_index == data_ranks) {
 if (readvalue == "") {
 //show_message('"'+readkey+'"');

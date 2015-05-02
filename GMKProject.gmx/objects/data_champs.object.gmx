@@ -52,7 +52,6 @@ champs = ds_map_create();
           <argument>
             <kind>1</kind>
             <string>if (written==1) {
-show_message(ds_map_find_value(champs,"40").championname);
 written=2;
 }
 </string>

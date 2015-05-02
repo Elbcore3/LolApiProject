@@ -11,6 +11,8 @@
       <sprite>sprites\button_fg</sprite>
       <sprite>sprites\button_fgp</sprite>
     </sprites>
+    <sprite>sprites\sprite3</sprite>
+    <sprite>sprites\sprite4</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -19,6 +21,7 @@
     <script>scripts\get_errordetails.gml</script>
     <script>scripts\write_results.gml</script>
     <script>scripts\api_getSummoners.gml</script>
+    <script>scripts\api_getChampStats.gml</script>
     <script>scripts\api_getChampions.gml</script>
     <script>scripts\api_getRanks.gml</script>
     <script>scripts\keyobjects.gml</script>
@@ -46,12 +49,24 @@
       <script>scripts\wcl_set_id.gml</script>
       <script>scripts\wcl_set_name.gml</script>
     </scripts>
+    <scripts name="write_champstats">
+      <script>scripts\wc_setchampion.gml</script>
+      <script>scripts\wc_set_id.gml</script>
+      <script>scripts\wc_set_games.gml</script>
+      <script>scripts\wc_set_wins.gml</script>
+      <script>scripts\wc_set_losses.gml</script>
+    </scripts>
+    <script>scripts\wc_get_top_champs.gml</script>
+    <script>scripts\get_champname_id.gml</script>
+    <script>scripts\check_input_count.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_button</font>
+    <font>fonts\fontZ</font>
   </fonts>
   <objects name="objects">
     <object>objects\button_test</object>
+    <object>objects\button_save</object>
     <objects name="Prefabs">
       <object>objects\pre_Button</object>
       <object>objects\button_test2</object>
@@ -62,14 +77,19 @@
       <object>objects\data_summoners</object>
       <object>objects\data_ranks</object>
       <object>objects\data_champs</object>
+      <object>objects\data_champstats</object>
       <objects name="sub_structs">
         <object>objects\data_summonerinfo</object>
         <object>objects\data_rankedinfo</object>
         <object>objects\data_championinfo</object>
+        <object>objects\data_championstats</object>
       </objects>
     </objects>
     <object>objects\output</object>
     <object>objects\data_colorstring</object>
+    <object>objects\init</object>
+    <object>objects\object17</object>
+    <object>objects\object18</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

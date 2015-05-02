@@ -25,12 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spacey = 20;
-spacex = 90;
+            <string>spacey = 50;
+spacex = 110;
+sw=0;
+sh=0;
 r[0,0] = new_colorstring("Name", c_black);
 r[0,1] = new_colorstring("Level", c_black);
 r[0,2] = new_colorstring("Rank", c_black);
 r[0,3] = new_colorstring("Games", c_black);
+r[0,4] = new_colorstring('Champ#1', c_black);
+r[0,5] = new_colorstring('Champ#2', c_black);
+r[0,6] = new_colorstring('Champ#3', c_black);
+r[0,7] = new_colorstring('Champ#4', c_black);
+r[0,8] = new_colorstring('Champ#5', c_black);
 </string>
           </argument>
         </arguments>
@@ -79,7 +86,9 @@ r[0,3] = new_colorstring("Games", c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_colour(c_white);
-draw_rectangle(x,y,x+spacex*(array_get_max_length_2d(r)+1),y+spacey*(array_height_2d(r)+1),false);
+sw=spacex*(array_get_max_length_2d(r)+1);
+sh=spacey*(array_height_2d(r)+2);
+draw_rectangle(x,y,x+sw,y+sh,false);
 draw_set_colour(c_black);
 for (var i = 0; i&lt;array_height_2d(r); i++;)
    {

@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>width = 96
-height = 24
+            <string>width = room_width;
+height = 64
 pressed = 0;
-caption = "Test :B"
+caption = "Get Summoner Infos"
 textoffsetx = 3;
 textoffsety = 3;
-font = font_button;
+font = fontZ;
+x = (room_width/2)-(width/2)
 </string>
           </argument>
         </arguments>
@@ -63,7 +64,12 @@ if (mouse_check_button_released(mb_left)) {
 if (pressed ==1) {
 if ((mouse_x&gt;x)&amp;&amp;(mouse_x&lt;x+width)&amp;&amp;(mouse_y&gt;y)&amp;&amp;(mouse_y&lt;y+height)) {
 //FIRE ACTION
+if (data_champs.written!=0) {
 api_getSummoners(get_string("Summoner Name(s):","GreyAC,Verkacki,Eyktan,ChriSick,ElbcoreAC"));
+}
+else {
+show_message("Program isn't done loading Champion Names yet.");
+}
 }
 pressed =0;
 }
@@ -93,7 +99,7 @@ pressed =0;
             <string>draw_sprite_ext(button_bg,0,x,y,width/512,height/512,0,c_white,1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
-draw_set_font(font_button);
+draw_set_font(font);
 draw_text_ext_transformed(x+(width/2),y+textoffsety,caption,1,width-(textoffsetx*2),1,1,0);
 if (pressed == 0) {
 draw_sprite_ext(button_fg,0,x,y,width/512,height/512,0,c_white,0.5);

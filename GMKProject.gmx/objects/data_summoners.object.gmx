@@ -67,12 +67,12 @@ output.r[i,1] = new_colorstring(sl,c_orange);
 else {
 output.r[i,1] = new_colorstring(sl,c_lime);
 }
+api_getChampStats(si,sn);
 sidl = sidl + si+ ",";
 //show_message(sn+" ("+si+") - Level: "+sl+" - Icon: "+sic);
 sumind = ds_map_find_next(summoners,sumind);
 i+=1;
 }
-show_message(sidl);
 api_getRanks(sidl);
 written=2;
 }
