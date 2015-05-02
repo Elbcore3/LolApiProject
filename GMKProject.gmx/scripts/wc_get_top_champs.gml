@@ -1,7 +1,7 @@
 var ss,si,list,count,games,chid;
 count= 5;
 if (count>ds_map_size(champs)) {
-count = ds_map_size(champs);
+count = ds_map_size(champs)-1;
 }
 list = ds_list_create();
 while (ds_list_size(list)<count) {

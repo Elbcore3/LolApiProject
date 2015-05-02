@@ -57,11 +57,21 @@ list = wc_get_top_champs();
 for (i=1;i&lt;array_height_2d(output.r);i++) {
 if (output.r[i,0].object_index==data_colorstring) {
 if (output.r[i,0].text==summonername) {
+if((ds_map_size(champs)&gt;0)&amp;&amp;(ds_list_size(list)&gt;0)) {
 output.r[i,4] = new_colorstring(get_champname_id(real(ds_list_find_value(list,0)))+"# ("+string(ds_map_find_value(champs,string(ds_list_find_value(list,0))).championwins)+"W-"+string(ds_map_find_value(champs,string(ds_list_find_value(list,0))).championlosses)+"L)",c_dkgray);
+}
+if((ds_map_size(champs)&gt;1)&amp;&amp;(ds_list_size(list)&gt;1)) {
 output.r[i,5] = new_colorstring(get_champname_id(real(ds_list_find_value(list,1)))+"# ("+string(ds_map_find_value(champs,string(ds_list_find_value(list,1))).championwins)+"W-"+string(ds_map_find_value(champs,string(ds_list_find_value(list,1))).championlosses)+"L)",c_dkgray);
+}
+if((ds_map_size(champs)&gt;2)&amp;&amp;(ds_list_size(list)&gt;2)) {
 output.r[i,6] = new_colorstring(get_champname_id(real(ds_list_find_value(list,2)))+"# ("+string(ds_map_find_value(champs,string(ds_list_find_value(list,2))).championwins)+"W-"+string(ds_map_find_value(champs,string(ds_list_find_value(list,2))).championlosses)+"L)",c_dkgray);
+}
+if((ds_map_size(champs)&gt;3)&amp;&amp;(ds_list_size(list)&gt;3)) {
 output.r[i,7] = new_colorstring(get_champname_id(real(ds_list_find_value(list,3)))+"# ("+string(ds_map_find_value(champs,string(ds_list_find_value(list,3))).championwins)+"W-"+string(ds_map_find_value(champs,string(ds_list_find_value(list,3))).championlosses)+"L)",c_dkgray);
+}
+if((ds_map_size(champs)&gt;4)&amp;&amp;(ds_list_size(list)&gt;4)) {
 output.r[i,8] = new_colorstring(get_champname_id(real(ds_list_find_value(list,4)))+"# ("+string(ds_map_find_value(champs,string(ds_list_find_value(list,4))).championwins)+"W-"+string(ds_map_find_value(champs,string(ds_list_find_value(list,4))).championlosses)+"L)",c_dkgray);
+}
 }
 }
 }
