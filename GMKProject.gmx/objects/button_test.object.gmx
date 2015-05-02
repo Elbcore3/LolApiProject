@@ -28,7 +28,7 @@
             <string>width = room_width;
 height = 64
 pressed = 0;
-caption = "Get Summoner Infos"
+caption = "Step1: Get Summoner Infos"
 textoffsetx = 3;
 textoffsety = 3;
 font = fontZ;

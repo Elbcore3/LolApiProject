@@ -28,7 +28,7 @@
             <string>width = room_width;
 height = 64
 pressed = 0;
-caption = "Save Summoner Infos"
+caption = "Step2: Save Summoner Infos"
 textoffsetx = 3;
 textoffsety = 3;
 font = fontZ;
