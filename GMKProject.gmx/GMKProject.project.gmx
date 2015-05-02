@@ -59,6 +59,7 @@
     <script>scripts\wc_get_top_champs.gml</script>
     <script>scripts\get_champname_id.gml</script>
     <script>scripts\check_input_count.gml</script>
+    <script>scripts\clear_output.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_button</font>

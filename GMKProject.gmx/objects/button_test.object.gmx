@@ -65,6 +65,7 @@ if (pressed ==1) {
 if ((mouse_x&gt;x)&amp;&amp;(mouse_x&lt;x+width)&amp;&amp;(mouse_y&gt;y)&amp;&amp;(mouse_y&lt;y+height)) {
 //FIRE ACTION
 if (data_champs.written!=0) {
+clear_output();
 api_getSummoners(get_string("Summoner Name(s):","GreyAC,Verkacki,Eyktan,ChriSick,ElbcoreAC"));
 }
 else {
